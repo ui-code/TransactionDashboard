@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Dashboard | theuicode.com</title>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" integrity="sha512-wnea99uKIC3TJF7v4eKk4Y+lMz2Mklv18+r4na2Gn1abDRPPOeef95xTzdwGD9e6zXJBteMIhZ1+68QC5byJZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="h-screen p-10 ">
+    <div class="container h-full border-8 rounded-3xl shadow-xl app-bg-white app-border-white">
+        <div class="flex flex-row h-full">
+            <div class="w-16 bg-white h-full items-center flex flex-col rounded-tl-3xl rounded-bl-3xl py-4">
+                <svg class="w-5 h-5 mb-auto app-color-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16"></path></svg>
+                <svg class="w-5 h-5 my-2 app-color-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                <svg class="w-5 h-5 my-2 app-color-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="w-5 h-5 my-2 app-color-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                <svg class="w-5 h-5 my-2 app-color-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                <div class="h-px w-5 my-2 app-bg-gray-2"></div>
+                <svg class="w-5 h-5 my-2 app-color-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                <div class="w-8 h-8 rounded-full app-bg-blue relative mt-auto">
+                    <div class="w-4 h-4 bg-red-500 rounded-full absolute -top-1 -right-1 border-white border-4"></div>
+                </div>
+            </div>
+            <div class="flex flex-col w-full mx-16">
+                <div class="flex flex-col bg-white px-10 rounded-bl-3xl rounded-br-3xl">
+                    <div class="flex flex-row items-center py-6">
+                        <span class="app-color-blue font-bold text-xs mr-2">Dashboard</span>
+                        <span class="mr-2">|</span>
+                        <span class="mr-auto font-bold text-xs app-color-black">Hello Matt, Welcome Back!</span>
+                        <span class="font-bold text-xs app-color-gray">10:33, 01 April 2019</span>
+                    </div>
+                    <div class="flex flex-row pb-10">
+                        <div class="flex flex-col w-8/12">
+                            <div class="flex flex-row items-center py-4">
+                                <span class="text-lg font-semibold mr-auto">My Cards</span>
+                                <div class="rounded w-2 h-2 mx-1 app-bg-black"></div>
+                                <div class="rounded w-2 h-2 mx-1 app-bg-gray-2"></div>
+                                <div class="rounded w-2 h-2 mx-1 app-bg-gray-2"></div>
+                            </div>
+                            <div class="flex flex-row justify-between">
+                                <div class="w-20 h-20 border-dashed border-2 rounded-lg border-light-blue-500">
+                                    <svg class="w-12 h-12 app-color-black m-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                                </div> 
+                                <div class="flex flex-col app-bg-gradient-blue w-1/3 h-36 p-4 rounded-xl app-box-shadow-blue">
+                                    <span class="text-white font-bold mb-auto">VISA</span>
+                                    <span class="text-white text-2xl font-semibold">$ 5 400.55</span>
+                                    <span class="text-white text-xs">**** **** ****  4558</span>
+                                </div>  
+                                <div class="flex flex-col app-bg-gray-2 w-1/3 h-36 p-4 rounded-xl">
+                                    <span class="app-color-black font-bold mb-auto">VISA</span>
+                                    <span class="app-color-black text-2xl font-semibold">$ 23 400.55</span>
+                                    <span class="text-gray-400 text-xs">**** **** ****  3225</span>
+                                </div>  
+                            </div>
+                        </div>
+                        <div class="w-px app-bg-gray-2 mx-12"></div>
+                        <div class="flex flex-col w-4/12 justify-between">
+                            <div class="flex flex-row items-center py-6">
+                                <span class="mr-auto text-lg font-semibold">Balance</span>
+                                <span class="text-sm font-semibold">Last month</span>
+                                <svg class="w-6 h-6 font-bold ml-2 app-color-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+
+                            </div>
+                            <span class="app-color-blue text-4xl font-semibold">$5 400.55</span>
+                            <span class="app-color-blue text-sm font-semibold">**** **** **** 4558</span>
+                            <div class="flex flex-row">
+                                <div class="flex flex-col w-1/2">
+                                    <span class="text-xs app-color-gray font-semibold mb-2">Income</span>
+                                    <div class="flex flex-row items-center">
+                                        <div class="flex flex-row w-7 h-7 app-bg-gray-2 justify-center items-center rounded-full mr-2">
+                                            <svg class="w-4 h-4 transform rotate-45 app-color-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                                        </div>
+                                        <span class="font-semibold">+$6 320.15</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col w-1/2">
+                                    <span class="text-xs app-color-gray font-semibold mb-2">Expense</span>
+                                    <div class="flex flex-row items-center">
+                                        <div class="transform rotate-90 flex flex-row w-7 h-7 app-bg-gray-2 justify-center items-center rounded-full mr-2">
+                                            <svg class="w-4 h-4 transform rotate-45 app-color-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+                                        </div>
+                                        <span class="font-semibold">-$919.60</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+                <div class="flex flex-row px-10 py-12">
+                    <div class="flex flex-col w-8/12">
+                        <div class="flex flex-row items-center justify-between">
+                            <span class="text-lg font-semibold">Monthly summary</span>
+                            <span class="text-xs font-semibold app-color-blue">Generate report</span>
+                        </div>
+                        <div class="flex flex-row pt-10">
+                            <div class="flex flex-col w-4/12 border-dashed border-2 rounded-lg app-border-gray-3 px-10 py-6">
+                                <span class="text-sm app-color-gray-2 font-semibold mb-2">Income</span>
+                                <span class="app-color-green text-2xl font-semibold -mt-2 -ml-3">+ $5 000.00</span>
+                                <div class="h-px app-bg-gray-3 my-6"></div>
+                                <span class="text-sm app-color-gray-2 font-semibold mb-2">Expense</span>
+                                <span class="app-color-red text-2xl font-semibold -mt-2 -ml-3">- $234.55</span>
+                            </div>
+                            <div class="flex flex-col w-8/12">
+                                <div id="chart" class="w-full"></div>
+                                <div class="flex flex-row items-center pt-5 pl-9">
+                                    <span class="mr-auto font-bold text-xs app-color-black">21 - 31 Mar, 2019</span>
+                                    <div class="rounded w-2 h-2 mx-1 app-bg-gray-4"></div>
+                                    <div class="rounded w-2 h-2 mx-1 app-bg-gray-4"></div>
+                                    <div class="rounded w-2 h-2 mx-1 app-bg-black"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-px app-bg-gray-3 mx-12"></div>
+                    <div class="flex flex-col w-4/12">
+                        <div class="flex flex-row justify-between items-center">
+                            <span class="text-lg font-semibold">Latest transaction</span>
+                            <span class="text-xs font-semibold app-color-blue">Check all</span>
+                        </div>
+                        <div class="flex flex-row my-7">
+                            <div class="flex w-10 h-10 justify-center items-center border-2 rounded-md">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+
+                            </div>
+                            <div class="flex flex-col ml-3">
+                                <span class="font-semibold text-sm app-color-black">Starbucks</span>
+                                <span class="font-semibold text-xs app-color-blue">Shopping</span>
+                            </div>
+                            <div class="flex flex-col ml-auto items-end">
+                                <span class="font-semibold text-sm app-color-black">-$120.00</span>
+                                <span class="font-semibold text-xs app-color-gray-2">31 Mar 2019</span>
+                            </div>
+                        </div>
+                        <div class="h-px w-full app-bg-gray-2"></div>
+                        <div class="flex flex-row my-7">
+                            <div class="flex w-10 h-10 justify-center items-center border-2 rounded-md">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>                            
+
+                            </div>
+                            <div class="flex flex-col ml-3">
+                                <span class="font-semibold text-sm app-color-black">Design Studio</span>
+                                <span class="font-semibold text-xs app-color-blue">Salary</span>
+                            </div>
+                            <div class="flex flex-col ml-auto items-end">
+                                <span class="font-semibold text-sm app-color-green">+$5 000.00</span>
+                                <span class="font-semibold text-xs app-color-gray-2">30 Mar 2019</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-row justify-between mt-3">
+                            <button class="w-36 app-bg-blue text-gray-50 text-xs font-semibold px-4 py-2 rounded-md">New transaction</button>
+                            <button class="w-36 bg-white app-color-black text-xs font-semibold px-4 py-2 rounded-md">Settings</button>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    var options = {
+        series: [{
+                data: [1,2,3,1,2,4,1,2,4,6,3]
+            }
+        ],
+        xaxis:{
+            categories: [21,22,23,24,25,26,27,28,29,30,31],
+            axisBorder: {
+                show: false,
+            },
+            axisTicks: {
+                show: false,
+            },
+            labels: {
+                show: true,
+                style: {
+                    colors: '#c4c4c4',
+                    fontSize: '12px',
+                    fontWeight: 'bold',
+                    fontFamily: 'Montserrat'
+                }
+            }
+        },
+        chart: {
+            type: 'bar',
+            height: '75%',
+            toolbar: {
+                tools: {
+                    download: false
+                }
+            }
+        },
+        dataLabels: {
+            enabled: false
+        },
+        tooltip: {
+            enabled: false
+        },
+        plotOptions: {
+            bar: {
+                distributed: true,
+                borderRadius: 5,
+                columnWidth: '20%',
+            }
+        },
+        colors: ['#C5C5C5','#2E55D5','#2E55D5','#C5C5C5','#2E55D5','#2E55D5','#C5C5C5','#2E55D5','#2E55D5','#6ED192','#2E55D5'],
+        legend: {
+            show: false
+        },
+        grid: {
+            show: false
+        },
+        yaxis: {
+            labels: {
+                show: false
+            }
+        }
+    };
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
+</script>
+</html>

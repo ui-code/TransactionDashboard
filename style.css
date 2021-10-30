@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom left, #e8e8e8 60%, #f3f3f3 60%, #f3f3f3 100%);
+}
+
+.app-bg-white {
+    background: #f3f3f3;
+}
+
+.app-border-white {
+    border-color: #f3f3f3;
+}
+
+.app-color-gray {
+    color: #C9C9C9;
+}
+
+.app-color-gray-2 {
+    color: #9EA3AA;
+}
+
+.app-color-black {
+    color: #2E2F31;
+}
+
+.app-bg-black {
+    background: #2E2F31;
+}
+
+.app-color-blue {
+    color: #2C56DE;
+}
+
+.app-color-green {
+    color: #7BD29A;
+}
+
+.app-color-red {
+    color: #F37575;
+}
+
+.app-bg-blue {
+    background: #2C56DE;
+}
+
+.app-bg-gray-2 {
+    background: #E8E8E8;
+}
+
+.app-bg-gray-3 {
+    background: #E6E6E6;
+}
+
+.app-bg-gray-4 {
+    background: #CFCFCF;
+}
+
+.app-border-gray-3 {
+    border-color: #CFCFCF;
+}
+
+.app-bg-gradient-blue {
+    background: linear-gradient(to bottom left, #2d55dc, #18317C);
+}
+
+.app-box-shadow-blue {
+    box-shadow: 0 4px 20px 0 rgb(45 85 220 / 70%)
+}
